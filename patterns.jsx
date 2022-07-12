@@ -39,17 +39,15 @@ const Greeting = ({ name, position }) => (
 );
 
 // Default values for props
-class Greeting extends React.Component {
-  render() {
-    const { name = '', position = '' } = this.props;
-
-    return (
-      <div>
-        <h1>Hi {name}!</h1>
-        <h2>I work as a {position}</h2>
-      </div>
-    );
-  }
+const Greeting = (props) => {
+  const { name = '', position = '' } = this.props;
+  
+  return ( 
+    <div>
+      <h1>Hi {name}!</h1>
+      <h2>I work as a {position}</h2>
+    </div>
+  )
 };
 
 /* 3. JSX spread attributes */
@@ -58,19 +56,20 @@ class Greeting extends React.Component {
 <Greeting
   name="Jack"
   position="Front-end Developer"
-  data-name="position"
+  dataName="position"
   onClick={showFunction}
-  id="person-position"
+  currentId="personPosition"
 />
-
-// REST
-const Greeting = ({ name, position, ...restProps }) => (
-  <div>
-    <h1>Hi {name}!</h1>
-    <h2 {...restProps}>I work as a {position}</h2>
-  </div>
+    
+//REST
+const Greeting = ({name, position, ...restProps }) => {  
+    <div>
+      <h1>Hi {name}!</h1>
+      <h2>I work as a {position}</h2>
+      <NewElem {...restProps}/>
+    </div>
 );
-
+  
 /* 4. Merge destructured props with other values */
 
 // Example of custom props

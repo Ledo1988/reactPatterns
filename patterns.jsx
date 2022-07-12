@@ -120,6 +120,15 @@ const Greeting = ({ name, position }) => (
   rightSide={<Main />}
   bottom={<Footer />}
 />
+    
+const LayoutComponent = ({ top, leftSide, rightSide, bottom }) => (
+  <div>
+    {top}
+    {leftSide}
+    {rightSide}
+    {bottom}
+  </div>
+);
 
 /* 7. Modern Class syntax */
 

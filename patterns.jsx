@@ -263,22 +263,3 @@ handleEvent({ type }) {
     default: return console.warn(`No case for event type ${type}`);
   }
 };
-
-/* 14. Higher-order component */
-
-const Connect = ComposedComponent => (
-  class extends React.Component {
-    this.state = { data: null }
-
-    componentDidMount() {
-      // this would fetch or connect to a store
-      this.setState({ data });
-    }
-
-    render() {
-      return (
-        <ComposedComponent {...this.props} data={this.state.data} />
-      )
-    }
-  }
-);

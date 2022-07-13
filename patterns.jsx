@@ -209,6 +209,25 @@ const Layout = ({ children }) => [
   <Footer key="footer" />,
 ];
 
+// Example with children
+const App = () => {
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <Layout>
+        <p>Layout child</p>
+      </Layout>
+    </div>
+  );
+}
+
+const Layout = ({ children }) => [
+  <div key={1}>One</div>,
+  <div key={2}>{children}</div>,
+  <div key={3}>Three</div>
+];
+
 /* 11. propTypes & defaultProps */
 
 const Greeting = ({ name, age, onClick, address }) => (

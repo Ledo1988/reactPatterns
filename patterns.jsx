@@ -228,31 +228,7 @@ const Layout = ({ children }) => [
   <div key={3}>Three</div>
 ];
 
-/* 11. propTypes & defaultProps */
-
-const Greeting = ({ name, age, onClick, address }) => (
-  <>
-    <h1 onClick={onClick}>My name is {name}! I am {age} old.</h1>
-    {address && <h2>My address is {address.city}, {address.street}}</h2>
-  </>
-);
-
-Greeting.propTypes = {
-  name: PropTypes.string.isRequired,
-  age: PropTypes.number.isRequired,
-  onClick: PropTypes.func,
-  address: PropTypes.shape({
-    city: PropTypes.string,
-    street: PropTypes.string,
-  }),
-};
-
-Greeting.defaultProps = {
-  onClick: () => {},
-  address: null,
-};
-
-/* 12. setState and 2nd argument */
+/* 11. setState and 2nd argument */
 
 handleChange = () => {
   this.setState({ someValue: this.state.someValue + 1 },
@@ -260,7 +236,7 @@ handleChange = () => {
   });
 };
 
-/* 13. Proxy component */
+/* 12. Proxy component */
 
 // Not good
 <button type="button"></button>
@@ -271,7 +247,7 @@ const Button = (props) => <button type="button" {...props} />
 // And use component everywhere
 <Button />
 
-/* 14. Event switch */
+/* 13. Event switch */
 
 // A lot of methods
 handleClick() => { this.doSomething() };
@@ -288,7 +264,7 @@ handleEvent({ type }) {
   }
 };
 
-/* 15. Higher-order component */
+/* 14. Higher-order component */
 
 const Connect = ComposedComponent => (
   class extends React.Component {
